@@ -20,21 +20,21 @@ pipeline {
     }
      stage('Push images to aws ecr'){
           steps {
-        withDockerRegistry(credentialsId: 'ecr:us-east-2:aws-credentials', url: 'http://067421168594.dkr.ecr.us-east-2.amazonaws.com/account-service') {
-             sh 'docker tag bank-service:latest 067421168594.dkr.ecr.us-east-2.amazonaws.com/bank-service'
-             sh 'docker push 067421168594.dkr.ecr.us-east-2.amazonaws.com/bank-service'
+        withDockerRegistry(credentialsId: 'ecr:ap-south-1:aws-credentials', url: 'http://887625267599.dkr.ecr.ap-south-1.amazonaws.com/account-service') {
+             sh 'docker tag bank-service:latest 887625267599.dkr.ecr.ap-south-1.amazonaws.com/bank-service'
+             sh 'docker push 887625267599.dkr.ecr.ap-south-1.amazonaws.com/bank-service'
 
-             sh 'docker tag branch-service:latest 067421168594.dkr.ecr.us-east-2.amazonaws.com/branch-service'
-             sh 'docker push 067421168594.dkr.ecr.us-east-2.amazonaws.com/branch-service'
+             sh 'docker tag branch-service:latest 067421168594.dkr.ecr.ap-south-1.amazonaws.com/branch-service'
+             sh 'docker push 887625267599.dkr.ecr.ap-south-1.amazonaws.com/branch-service'
 
-             sh 'docker tag customer-service:latest 067421168594.dkr.ecr.us-east-2.amazonaws.com/customer-service'
-             sh 'docker push 067421168594.dkr.ecr.us-east-2.amazonaws.com/customer-service'
+             sh 'docker tag customer-service:latest 067421168594.dkr.ecr.ap-south-1.amazonaws.com/customer-service'
+             sh 'docker push 887625267599.dkr.ecr.ap-south-1.amazonaws.com/customer-service'
 
-             sh 'docker tag account-service:latest 067421168594.dkr.ecr.us-east-2.amazonaws.com/account-service'
-             sh 'docker push 067421168594.dkr.ecr.us-east-2.amazonaws.com/account-service'
+             sh 'docker tag account-service:latest 887625267599.dkr.ecr.ap-south-1.amazonaws.com/account-service'
+             sh 'docker push 887625267599.dkr.ecr.ap-south-1.amazonaws.com/account-service'
 
-             sh 'docker tag transaction-service:latest 067421168594.dkr.ecr.us-east-2.amazonaws.com/transaction-service'
-             sh 'docker push 067421168594.dkr.ecr.us-east-2.amazonaws.com/transaction-service'
+             sh 'docker tag transaction-service:latest 887625267599.dkr.ecr.ap-south-1.amazonaws.com/transaction-service'
+             sh 'docker push 887625267599.dkr.ecr.ap-south-1.amazonaws.com/transaction-service'
             }
           }
     }
